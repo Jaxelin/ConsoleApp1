@@ -35,7 +35,10 @@ try
     Console.WriteLine("Message published asynchronously.");
 
     // 开始消费消息 (异步)
-    _ = rabbitService.StartConsumingAsync();
+    _ = rabbitService.StartConsumingAsync(order => {
+        Console.WriteLine($"💼 Business processing order: {order.OrderId}");
+        return Task.CompletedTask;
+    });
 
     Console.WriteLine("Press any key to exit...");
     Console.ReadKey();
