@@ -2,10 +2,11 @@
 
 namespace ConsoleApp1
 {
-    internal class Program
+    internal class Program1
     {
-        static async Task Main(string[] args)
+        static async Task Main1(string[] args)
         {
+            int[] c = new int[5];
             // 配置
             var config = new RabbitMQConfig
             {
